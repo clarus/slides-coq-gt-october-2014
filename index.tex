@@ -13,6 +13,20 @@
   \maketitle
 
   \begin{frame}
+    \frametitle{The need for a package manager}
+    \begin{itemize}
+      \item few user developments are reused
+      \item \emph{contribs} mechanism, but outdated and centralized
+      \item no simple / uniform way to install a foreign library
+      \item even if there seem to be more and more developers...
+    \end{itemize}
+    A lot of time is lost. What other programming languages have:
+    \begin{center}
+      \emph{A package manager.}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
     \tableofcontents
   \end{frame}
 
@@ -22,6 +36,22 @@
     \begin{center}
       \includegraphics[width=4cm]{images/opam}
     \end{center}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Opam: the package manager of OCaml}
+    We will use Opam.
+
+    Why?
+    \begin{itemize}
+      \item OCaml people are our closest cousins
+      \item some Coq developments depend on OCaml packages
+    \end{itemize}
+    What it is?
+    \begin{itemize}
+      \item a tool made by OCaml Pro
+      \item 772 OCaml packages today
+      \item dependency management based on the Mancoosi project
+    \end{itemize}
   \end{frame}
 
   \section{Demo}
