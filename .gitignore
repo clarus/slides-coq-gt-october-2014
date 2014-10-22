@@ -1,4 +1,4 @@
-index.pdf
+*.pdf
 *.temp
 *.d
 *.make
