@@ -7,7 +7,7 @@
 \usepackage{tikz}
 
 \begin{document}
-  \title{Opam for Coq}
+  \title{OPAM for Coq}
   \author{Guillaume Claret}
   \date{October 23, 2014 - Coq Working Group}
   \maketitle
@@ -30,16 +30,16 @@
     \tableofcontents
   \end{frame}
 
-  \section{Opam}
+  \section{OPAM}
   \begin{frame}
-    \frametitle{Opam}
+    \frametitle{OPAM}
     \begin{center}
       \includegraphics[width=4cm]{images/opam}
     \end{center}
   \end{frame}
   \begin{frame}
-    \frametitle{Opam: the package manager of OCaml}
-    We will use Opam.
+    \frametitle{OPAM: the package manager of OCaml}
+    We will use OPAM.
 
     Why?
     \begin{itemize}
@@ -72,18 +72,56 @@
     \end{center}
   \end{frame}
 
-  \section{Policy}
+  \section{Policies}
   \begin{frame}
-    \frametitle{Policy}
+    \frametitle{Policies}
     \begin{center}
-      \includegraphics[width=4cm]{images/policy}
+      \includegraphics[width=4cm]{images/policies}
     \end{center}
   \end{frame}
   \begin{frame}
     \frametitle{Repositories}
+    \begin{itemize}
+      \item \emph{stable}: for stable release (link to a static archive)
+
+        The only one interesting for the end-users.
+      \item \emph{testing}: for beta versions or pre-releases
+      \item \emph{unstable}: anything, even links to Git masters
+      \item \emph{coqs}: Coq version for developers (branches, trunk)
+    \end{itemize}
   \end{frame}
   \begin{frame}
     \frametitle{Naming scheme}
+    \begin{itemize}
+      \item regular expression: \texttt{coq-[a-Z0-9\textbackslash-]+}
+      \item example: \texttt{coq-ssreflect}
+      \item prefix \texttt{coq-} to distinguish from OCaml packages
+      \item lowercase letters, dash as separator (\texttt{-}) to be uniform
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Versions scheme}
+    We must be strict because people will use inequalities over version numbers for dependencies, and it has to be predictable.
+    \begin{itemize}
+      \item \emph{SemVer} convention: \texttt{MAJOR.MINOR.PATCH}. In theory:
+        \begin{itemize}
+          \item \texttt{MAJOR}: breaking changes
+          \item \texttt{MINOR}: backward compatible changes
+          \item \texttt{PATCH}: bug fixes
+        \end{itemize}
+        If it is hard for your package to follow, you probably need to do some \emph{divide and conquer}.
+      \item example: \texttt{1.5.1}
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Versions scheme for non-stable releases}
+    Recommendations: using letters:
+    \begin{itemize}
+      \item pre-releases: \texttt{1.6-beta1} or \texttt{1.6-rc3} (are smaller than \texttt{1.6.0})
+      \item branches: \texttt{1.6.dev} (bigger than \texttt{1.6.0})
+      \item master: \texttt{dev} (bigger than any version starting with a number)
+    \end{itemize}
+    Remark: the order on versions in OPAM is the same as in Debian.
   \end{frame}
   \begin{frame}
     \frametitle{Build system}
