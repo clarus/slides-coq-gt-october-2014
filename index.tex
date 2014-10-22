@@ -121,10 +121,19 @@
       \item branches: \texttt{1.6.dev} (bigger than \texttt{1.6.0})
       \item master: \texttt{dev} (bigger than any version starting with a number)
     \end{itemize}
-    Remark: the order on versions in OPAM is the same as in Debian.
+    (the order on versions in OPAM is the same as in Debian)
   \end{frame}
   \begin{frame}
     \frametitle{Build system}
+    Note: \emph{OPAM is not a build system.}
+    \begin{itemize}
+      \item to exploit the \texttt{-j} option of OPAM, we should enforce the:
+        \begin{center}
+          \texttt{make "-j\%{jobs}\%"}
+        \end{center}
+        in OPAM files.
+      \item we hope \texttt{coq\_makefile} will be enough for most of the packages
+    \end{itemize}
   \end{frame}
 
   \section{Bench system}
