@@ -12,13 +12,14 @@
   \date{October 23, 2014 - Coq Working Group}
   \maketitle
 
+  \section*{Need}
   \begin{frame}
     \frametitle{The need for a package manager}
+    Even if there seem to be more and more developers:
     \begin{itemize}
       \item few user developments are reused
       \item \emph{contribs} mechanism, but outdated and centralized
       \item no simple / uniform way to install a foreign library
-      \item even if there seem to be more and more developers...
     \end{itemize}
     A lot of time is lost. What other programming languages have:
     \begin{center}
@@ -26,6 +27,7 @@
     \end{center}
   \end{frame}
 
+  \section*{Plan}
   \begin{frame}
     \tableofcontents
   \end{frame}
@@ -61,6 +63,8 @@
 
         Hosted on \url{https://github.com/coq}.
       \item a bench system
+
+        Hosted on \url{https://github.com/coq-bench}.
     \end{itemize}
   \end{frame}
 
@@ -109,8 +113,8 @@
           \item \texttt{MINOR}: backward compatible changes
           \item \texttt{PATCH}: bug fixes
         \end{itemize}
-        If it is hard for your package to follow, you probably need to do some \emph{divide and conquer}.
       \item example: \texttt{1.5.1}
+      \item If it is hard for your package to follow, you probably need to do some \emph{divide and conquer}.
     \end{itemize}
   \end{frame}
   \begin{frame}
@@ -142,5 +146,19 @@
     \begin{center}
       \includegraphics[width=4cm]{images/bench}
     \end{center}
+  \end{frame}
+
+  \section*{Conclusion}
+  \begin{frame}
+    \frametitle{TODO}
+    \begin{itemize}
+      \item add the OPAM website on \url{http://coq.inria.fr/}
+      \item improve the bench
+      \item what should we do with the \emph{contribs}?
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Thanks.}
+    \Huge{Thanks.}
   \end{frame}
 \end{document}
